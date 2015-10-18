@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+BandwidthMonitorVisual
+</name>
+</assembly>
+<members>
+<member name="T:BandwidthMonitorVisual.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:BandwidthMonitorVisual.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:BandwidthMonitorVisual.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:BandwidthMonitorVisual.My.Resources.Resources.WebServercontents">
+<summary>
+  Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Network Monitor Online Graph&lt;/title&gt;
+    &lt;script src=&quot;http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+            var graph;
+            var xPadding = 30;
+            var yPadding = 30;
+
+            var data = { values: [
+			//DATASTART		
+			//DATAEND
+            ]};
+
+            // Returns the max Y value in our data list
+            function getMaxY() {
+                var max = 0;
+
+                for(var i = 0 [rest of string was truncated]&quot;;.
+</summary>
+</member>
+</members>
+</doc>

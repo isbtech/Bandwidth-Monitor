@@ -1,0 +1,14 @@
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\bin\Debug\BandwidthMonitorVisual.exe.config
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\obj\Debug\BandwidthMonitorVisual.Resources.resources
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\obj\Debug\BandwidthMonitorVisual.vbproj.GenerateResource.Cache
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\obj\Debug\BandwidthMonitorVisual.xml
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\bin\Debug\BandwidthMonitorVisual.exe
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\bin\Debug\BandwidthMonitorVisual.pdb
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\bin\Debug\BandwidthMonitorVisual.xml
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\obj\Debug\BandwidthMonitorVisual.exe
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\obj\Debug\BandwidthMonitorVisual.pdb
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\obj\Debug\BandwidthMonitorVisual.Main.resources
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\obj\Debug\BandwidthMonitorVisual.vbprojResolveAssemblyReference.cache
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\bin\Debug\SimpleHttpServer.dll
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\bin\Debug\SimpleHttpServer.pdb
+c:\users\killpot\documents\visual studio 2015\Projects\BandwidthMonitorVisual\BandwidthMonitorVisual\bin\Debug\SimpleHttpServer.xml

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Monitor Online Graph</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+    <script>
+            var graph;
+            var xPadding = 30;
+            var yPadding = 30;
+
+            var data = { values: [
+			//DATASTART		
+{ X: "", Y: 1094 },
+{ X: "", Y: 3669 },
+{ X: "", Y: 118210 },
+{ X: "", Y: 111816 },
+{ X: "", Y: 32709 },
+{ X: "", Y: 1450 },
+{ X: "", Y: 15977 },
+{ X: "", Y: 1836 },
+{ X: "", Y: 130414 },
+{ X: "", Y: 275352 },
+{ X: "", Y: 19731 },
+{ X: "", Y: 459572 },
+{ X: "", Y: 328867 },
+{ X: "", Y: 387866 },
+{ X: "", Y: 303085 },
+{ X: "", Y: 136516 },
+{ X: "", Y: 359413 },
+{ X: "", Y: 341047 },
+{ X: "", Y: 294073 },
+{ X: "", Y: 88173 },
+{ X: "", Y: 867 },
+{ X: "", Y: 1686 },
+{ X: "", Y: 161833 },
+{ X: "", Y: 319409 },
+{ X: "", Y: 353300 },
+{ X: "", Y: 410502 },
+{ X: "", Y: 502562 },
+{ X: "", Y: 595869 },
+{ X: "", Y: 591810 },
+{ X: "", Y: 547577 },
+{ X: "", Y: 586254 },
+{ X: "", Y: 526627 },
+{ X: "", Y: 449337 },
+{ X: "", Y: 469095 },
+{ X: "", Y: 385078 },
+{ X: "", Y: 237851 },
+{ X: "", Y: 293254 },
+{ X: "", Y: 305302 },
+{ X: "", Y: 326306 },
+{ X: "", Y: 308007 },
+{ X: "", Y: 325041 },
+{ X: "", Y: 320958 },
+{ X: "", Y: 316864 },
+{ X: "", Y: 364857 },
+{ X: "", Y: 350217 },
+{ X: "", Y: 421843 },
+{ X: "", Y: 428726 },
+{ X: "", Y: 468612 },
+{ X: "", Y: 516013 },
+{ X: "", Y: 385393 },
+{ X: "", Y: 471363 },
+{ X: "", Y: 534450 },
+{ X: "", Y: 523505 },
+{ X: "", Y: 487958 },
+{ X: "", Y: 589405 },
+{ X: "", Y: 363982 },
+{ X: "", Y: 320523 },
+{ X: "", Y: 369367 },
+{ X: "", Y: 309682 },
+{ X: "", Y: 346132 },
+{ X: "", Y: 401192 },
+{ X: "", Y: 425606 },
+{ X: "", Y: 400996 },
+{ X: "", Y: 253725 },
+{ X: "", Y: 259333 },
+{ X: "", Y: 274493 },
+{ X: "", Y: 328533 },
+{ X: "", Y: 275396 },
+{ X: "", Y: 333526 },
+{ X: "", Y: 303042 },
+{ X: "", Y: 366599 },
+{ X: "", Y: 385127 },
+{ X: "", Y: 396030 },
+{ X: "", Y: 351135 },
+{ X: "", Y: 429445 },
+{ X: "", Y: 450693 },
+{ X: "", Y: 379372 },
+{ X: "", Y: 380502 },
+{ X: "", Y: 448094 },
+{ X: "", Y: 463150 },
+{ X: "", Y: 395353 },
+{ X: "", Y: 395467 },
+{ X: "", Y: 414931 },
+{ X: "", Y: 375248 },
+{ X: "", Y: 384056 },
+{ X: "", Y: 458219 },
+{ X: "", Y: 331180 },
+{ X: "", Y: 439406 },
+{ X: "", Y: 278382 },
+{ X: "", Y: 349096 },
+{ X: "", Y: 285858 },
+{ X: "", Y: 356007 },
+{ X: "", Y: 334850 },
+{ X: "", Y: 309415 },
+{ X: "", Y: 306259 },
+{ X: "", Y: 282512 },
+{ X: "", Y: 312085 },
+{ X: "", Y: 338200 },
+{ X: "", Y: 358228 },
+{ X: "", Y: 324499 },
+{ X: "", Y: 247927 },
+//DATAEND
+            ]};
+
+            // Returns the max Y value in our data list
+            function getMaxY() {
+                var max = 0;
+
+                for(var i = 0; i < data.values.length; i ++) {
+                    if(data.values[i].Y > max) {
+                        max = data.values[i].Y;
+                    }
+                }
+
+                max += 10 - max % 10;
+                return max;
+            }
+
+            // Return the x pixel for a graph point
+            function getXPixel(val) {
+                return ((graph.width() - xPadding) / data.values.length) * val + (xPadding * 1.5);
+            }
+
+            // Return the y pixel for a graph point
+            function getYPixel(val) {
+                return graph.height() - (((graph.height() - yPadding) / getMaxY()) * val) - yPadding;
+            }
+
+            $(document).ready(function() {
+                graph = $('#graph');
+                var c = graph[0].getContext('2d');
+
+                c.lineWidth = 2;
+                c.strokeStyle = '#333';
+                c.font = 'italic 8pt sans-serif';
+                c.textAlign = "center";
+
+                // Draw the axises
+                c.beginPath();
+                c.moveTo(xPadding, 0);
+                c.lineTo(xPadding, graph.height() - yPadding);
+                c.lineTo(graph.width(), graph.height() - yPadding);
+                c.stroke();
+
+                // Draw the X value texts
+                for(var i = 0; i < data.values.length; i ++) {
+                    c.fillText(data.values[i].X, getXPixel(i), graph.height() - yPadding + 20);
+                }
+
+                // Draw the Y value texts
+                c.textAlign = "right"
+                c.textBaseline = "middle";
+
+                for(var i = 0; i < getMaxY(); i += 100) {
+                    c.fillText(i, xPadding - 10, getYPixel(i));
+                }
+
+                c.strokeStyle = '#f00';
+
+                // Draw the line graph
+                c.beginPath();
+                c.moveTo(getXPixel(0), getYPixel(data.values[0].Y));
+                for(var i = 1; i < data.values.length; i ++) {
+                    c.lineTo(getXPixel(i), getYPixel(data.values[i].Y));
+                }
+                c.stroke();
+
+                // Draw the dots
+                c.fillStyle = '#333';
+
+                for(var i = 0; i < data.values.length; i ++) {
+                    c.beginPath();
+                    c.arc(getXPixel(i), getYPixel(data.values[i].Y), 2, 0, Math.PI * 2 , true);
+                    c.fill();
+                }
+            });
+    </script>
+</head>
+<body>
+    <canvas id="graph" width="800" height="1000"></canvas>
+</body>
+</html>
